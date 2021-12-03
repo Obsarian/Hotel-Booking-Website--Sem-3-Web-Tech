@@ -12,13 +12,17 @@ class Bookingform extends React.Component {
             padding: "30px 40px 30px 40px",
             height: "70px",
             width: "68%",
-            zIndex: "1020"
+            zIndex: "1020",
+			borderRadius: "2px"
         }
+		
         const bookingDivStyle = {
             display: "inline-block",
             margin: "0 7px 0 7px",
             height: "100%",
-            width: "18%"
+            width: "18%",
+			color: "rgb(53, 53, 53)",
+			borderRadius: "2px"
         }
 
         const bookingInputStyle = {
@@ -28,11 +32,13 @@ class Bookingform extends React.Component {
             fontFamily: ["M-PLUS-2", "sans-serif"],
             fontSize: "18px",
             textAlign: "center",
-            border: "0"
+            border: "0",
+			cursor: "pointer",
+			borderRadius: "2px"
         };
 
 		return (
-			<div class="booking-dropdown" style={bookingBarStyle}>
+			<form class="booking-dropdown" style={bookingBarStyle}>
 				<div style={bookingDivStyle}>
 					<input style={bookingInputStyle} type="date" class="book-input" id="check-in" required/>
 				</div>
@@ -62,7 +68,7 @@ class Bookingform extends React.Component {
 				<div style={{...bookingDivStyle, width: "20%"}}>
 					<input style={{...bookingInputStyle, backgroundColor: "rgb(187, 121, 91)", color: "white"}} type="submit" value="Book"/>
 				</div>
-			</div>
+			</form>
 		);
 	}
 }

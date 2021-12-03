@@ -35,14 +35,6 @@ class ImageSlideShow extends React.Component {
         }));
     }
 
-    // hoverButtonFunc = () => {
-    //     this.setState({buttonOpacity: "rgba(0,0,0,0.5)" });
-    // }
-
-    // exitButtonFunc = () => {
-    //     this.setState({buttonOpacity: "rgba(0,0,0,0.0)"});
-    // }
-
     render() {
 
         const imgSlideShowStyle = {
@@ -65,25 +57,6 @@ class ImageSlideShow extends React.Component {
             background: "linear-gradient(360deg, rgba(0,0,0,0), rgb(0, 0, 0, 0.8))"
         };
 
-        // const arrowStyle = {
-        //     zIndex: "1010",
-        //     cursor: "pointer",
-        //     position: "absolute",
-        //     top: "50%",
-        //     width: "auto",
-        //     marginTop: "-22px",
-        //     padding: "16px",
-        //     color: "white",
-        //     fontWeight: "bold",
-        //     fontSize: "18px",
-        //     transition: "0.6s ease",
-        //     borderRadius: "0 3px 3px 0",
-        //     userSelect: "none",
-        //     backgroundColor: this.state.buttonOpacity
-        // };
-
-        // const nextStyle = {right: "0", borderRadius: "3px 0 0 3px"};
-
         return (
             <div class="img-slide-show" style={imgSlideShowStyle}>
                 <div class="page-title" style={pageTitleStyle}>
@@ -93,8 +66,6 @@ class ImageSlideShow extends React.Component {
                 <div class="slides-fade" id="first-img">
                     <img style={{width: "100%"}} src={image_links[this.state.slideIndex]}/>
                 </div>
-                {/* <a onMouseEnter={this.hoverButtonFunc} onMouseLeave={this.exitButtonFunc} class="prev" onClick={() => this.plusSlides(-1)} style={arrowStyle}>&#10094;</a>
-                <a onMouseEnter={this.hoverButtonFunc} onMouseLeave={this.exitButtonFunc} class="next" onClick={() => this.plusSlides(1)} style={{...arrowStyle, ...nextStyle}}>&#10095;</a> */}
                 <Bookingform />
             </div>
         );

@@ -5,17 +5,15 @@ class Facilities extends React.Component {
     render() {
 
         const facilityDivStyle = {
-            backgroundColor: "rgb(53, 53, 53)", 
-            color: "black",
+            color: "rgb(53, 53, 53)",
             borderTop: "3px solid sienna"
         };
         const facilityHeadingStyle = {
             textAlign: "center",
-            fontFamily: ["M-PLUS-2", "sans-serif"],
+            fontFamily: ["Open Sans", "sans-serif"],
             fontSize: "20px",
             padding: "50px 0 50px 0",
-            width: "100%",
-            backgroundColor: "rgb(230, 230, 230)"
+            width: "100%"
         };
 
         const gridStyle = {
@@ -26,6 +24,7 @@ class Facilities extends React.Component {
         };
 
         const gridItemStyle = {
+            fontFamily: ["Open Sans", "sans-serif"],
             padding: "0"
         };
 

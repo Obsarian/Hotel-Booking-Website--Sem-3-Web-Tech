@@ -7,6 +7,8 @@ import DatePicker from 'sassy-datepicker';
 import Footer from './components/Footer';
 import Facilities from './components/Facilities';
 import Facil from './components/Facilities';
+import Testimonials from './components/Testimonials'
+import Contacts from './components/Contacts';
 import {image_links} from './components/ImageSlideShow';
 
 function App() {
@@ -15,6 +17,8 @@ function App() {
 			<Header />
 			<ImageSlideShow />
 			<Facilities />
+			<Testimonials />
+			<Contacts />
 			<Footer />
 		</div>
 	);
