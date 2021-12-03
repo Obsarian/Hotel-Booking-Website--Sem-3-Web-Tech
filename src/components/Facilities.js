@@ -11,7 +11,7 @@ class Facilities extends React.Component {
         };
         const facilityHeadingStyle = {
             textAlign: "center",
-            fontFamily: "Abel",
+            fontFamily: ["M-PLUS-2", "sans-serif"],
             fontSize: "20px",
             padding: "50px 0 50px 0",
             width: "100%",

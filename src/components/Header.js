@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from './images/logo.jpg';
 
 class Header extends React.Component {
 
@@ -96,7 +97,7 @@ class Header extends React.Component {
         return (
             <header style={headerStyle}>
                 <div class="logo" style={logoStyle}>
-                    <img style={logoImgStyle} src="https://mobile-app.marriott.com/images/social-card.jpg" alt="Marriott Bonvoy Logo" />
+                    <img style={logoImgStyle} src={logo} alt="Marriott Bonvoy Logo" />
                 </div>
                 <div class="header-menu" style={headerMenuStyle}>
                     <a id="home" onMouseOver={() => this.hoverFunc("home", 1)} onMouseLeave={() => this.hoverFunc("home", -1)} class="header-menu-item" style={{...headerMenuItemStyle, backgroundColor:this.state.hoverHome}}>Home</a>
