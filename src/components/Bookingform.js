@@ -38,7 +38,7 @@ class Bookingform extends React.Component {
         };
 
 		return (
-			<form class="booking-dropdown" style={bookingBarStyle}>
+			<form style={bookingBarStyle}>
 				<div style={bookingDivStyle}>
 					<input style={bookingInputStyle} type="date" class="book-input" id="check-in" required/>
 				</div>

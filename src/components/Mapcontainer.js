@@ -5,7 +5,8 @@ class Mapcontainer extends React.Component {
 	render() {
 		const mapStyle = {
 			width: "100%",
-			minWidth: "1400px"	
+			minWidth: "1400px",
+			height: "722px"
 		};
 		const mapDivStyle = {
 			height: "722px", 
