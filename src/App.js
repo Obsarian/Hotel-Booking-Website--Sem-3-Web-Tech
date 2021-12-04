@@ -9,6 +9,9 @@ import Facilities from './components/Facilities';
 import Facil from './components/Facilities';
 import Testimonials from './components/Testimonials'
 import Contacts from './components/Contacts';
+import Mapcontainer from './components/Mapcontainer';
+import Overview from './components/Overview';
+import Rooms from './components/Rooms';
 import {image_links} from './components/ImageSlideShow';
 
 function App() {
@@ -16,9 +19,12 @@ function App() {
 		<div style={{minWidth: "1400px"}}>
 			<Header />
 			<ImageSlideShow />
+			<Overview />
 			<Facilities />
+			<Rooms />
 			<Testimonials />
 			<Contacts />
+			<Mapcontainer />
 			<Footer />
 		</div>
 	);

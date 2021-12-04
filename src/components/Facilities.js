@@ -6,7 +6,6 @@ class Facilities extends React.Component {
 
         const facilityDivStyle = {
             color: "rgb(53, 53, 53)",
-            borderTop: "3px solid sienna"
         };
         const facilityHeadingStyle = {
             textAlign: "center",

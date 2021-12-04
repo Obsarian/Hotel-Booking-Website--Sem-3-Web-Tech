@@ -7,6 +7,7 @@ class Footer extends React.Component {
 
         const footerStyle = {
             position: "relative",
+            bottom: "0",
             backgroundColor: "rgb(28, 28, 28)",
             fontFamily: ["Open-Sans", "sans-serif"],
             textAlign: "center",

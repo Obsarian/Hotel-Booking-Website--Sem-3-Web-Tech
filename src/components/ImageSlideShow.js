@@ -40,7 +40,9 @@ class ImageSlideShow extends React.Component {
         const imgSlideShowStyle = {
             width: "100%",
             position: "relative",
-            margin: "0 0 -4px 0"
+            margin: "0 0 0 0",
+            borderBottom: "3px solid sienna",
+            height: "607px"
         };
 
         const pageTitleStyle = {
