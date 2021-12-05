@@ -1,11 +1,40 @@
 import React from 'react';
+const FileSystem = require("fs");
 
 class Bookingform extends React.Component {
+
+	dateSelected = (n) => {
+		if(n=="in"){
+			document.getElementById("checkinhead").style.display = "none";
+		}
+		else if(n=="out"){
+			document.getElementById("checkouthead").style.display = "none";
+		}
+	}
+
+	handleSubmit = () => {
+		var checkin = document.getElementById("check_in").value;
+		var checkout = document.getElementById("check_out").value;
+		var ad = document.getElementById("adults").value;
+		var chi = document.getElementById("children").value;
+		if(ad == "0" && chi == "0") {
+			window.history.back();
+		}
+		else {
+			var booking_det = {
+				"check_in_date" : checkin,
+				"check_out_date" : checkout,
+				"no_of_adults" : ad,
+				"no_of_children" : chi
+			}
+		}
+	}
+
 	render() {
 
 		const bookingBarStyle = {
             position: "absolute",
-            bottom: "10px",
+            bottom: "5px",
             left: "13.5%",
             textAlign: "center",
             backgroundColor: "rgb(230, 230, 230)",
@@ -17,12 +46,13 @@ class Bookingform extends React.Component {
         }
 		
         const bookingDivStyle = {
+			position: "relative",
             display: "inline-block",
             margin: "0 7px 0 7px",
             height: "100%",
             width: "18%",
 			color: "rgb(53, 53, 53)",
-			borderRadius: "2px"
+			borderRadius: "2px",
         }
 
         const bookingInputStyle = {
@@ -37,17 +67,30 @@ class Bookingform extends React.Component {
 			borderRadius: "2px"
         };
 
+		const hthreeStyle = {
+			position: "absolute",
+			display: "block",
+			backgroundColor: "rgb(215, 215, 215)",
+			width: "70%",
+			top: "4%",
+			left: "2%",
+			fontFamily: ["Open Sans", "sans-serif"]
+		};
+
 		return (
-			<form style={bookingBarStyle}>
+			<form style={bookingBarStyle} onSubmit={this.handleSubmit}>
 				<div style={bookingDivStyle}>
-					<input style={bookingInputStyle} type="date" class="book-input" id="check-in" required/>
+					<h3 id="checkinhead" style={hthreeStyle}>Check In</h3>
+					<input style={bookingInputStyle} onInput={() => this.dateSelected("in")} type="date" id="check_in" required/>
 				</div>
 				<div style={bookingDivStyle}>
-					<input style={bookingInputStyle} type="date" class="book-input" id="check-out" required/>
+					<h3 id="checkouthead" style={hthreeStyle}>Check Out</h3>
+					<input style={bookingInputStyle} onInput={() => this.dateSelected("out")} type="date" id="check_out" required/>
 				</div>
 				<div style={bookingDivStyle}>
-					<select style={bookingInputStyle}>
-						<option value="0">Adults</option>
+					<select id="adults" style={bookingInputStyle} required>
+						<option selected disabled value="">Adults</option>
+						<option value="0">0</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
@@ -56,8 +99,9 @@ class Bookingform extends React.Component {
 					</select>
 				</div>
 				<div style={bookingDivStyle}>
-					<select style={bookingInputStyle}>
-						<option value="0">Children</option>
+					<select id="children" style={bookingInputStyle} required>
+						<option selected disabled value="">Children</option>
+						<option value="0">0</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>

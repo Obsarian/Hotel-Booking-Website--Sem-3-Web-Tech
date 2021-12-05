@@ -32,9 +32,9 @@ class Header extends React.Component {
                             <Route path="/contacts" element={<Contactspage />}></Route>
                         </Routes>
                     </div>
-                    <div className={styles.book_button}>
+                    {/* <div className={styles.book_button}>
                         <p style={{margin: "22px"}}>Book Now</p>
-                    </div>
+                    </div> */}
                     <Footer />
                 </div>
             </>
