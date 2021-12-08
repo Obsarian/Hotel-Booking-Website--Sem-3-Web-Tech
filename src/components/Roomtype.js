@@ -16,7 +16,8 @@ class Roomtype extends React.Component {
             margin: "auto", 
             width: "500px", 
             height: "510px",
-            margin: "40px auto 40px auto"
+            borderRight: "2px solid sienna",
+            borderLeft: "2px solid sienna"
         };
         return (
             <div style={roomTypeGridStyle}>

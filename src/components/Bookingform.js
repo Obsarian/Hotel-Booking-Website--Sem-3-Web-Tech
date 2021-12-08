@@ -1,32 +1,58 @@
 import React from 'react';
-const FileSystem = require("fs");
+import axios from 'axios';
 
 class Bookingform extends React.Component {
-
+	constructor(props) {
+		super(props);
+		this.state={
+			check_in: "0000-00-0",
+			check_out: "0000-00-0",
+			adults: "0",
+			children: "0"
+		};
+		this.handleSubmit = this.handleSubmit.bind(this);
+	}
 	dateSelected = (n) => {
-		if(n=="in"){
+		if(n==="in"){
 			document.getElementById("checkinhead").style.display = "none";
 		}
-		else if(n=="out"){
+		else if(n==="out"){
 			document.getElementById("checkouthead").style.display = "none";
 		}
 	}
 
-	handleSubmit = () => {
-		var checkin = document.getElementById("check_in").value;
-		var checkout = document.getElementById("check_out").value;
-		var ad = document.getElementById("adults").value;
-		var chi = document.getElementById("children").value;
-		if(ad == "0" && chi == "0") {
+	setCheckIn = (event) => {
+		this.dateSelected("in");
+		this.setState({check_in: event.target.value});
+	}
+	setCheckOut = (event) => {
+		this.dateSelected("out");
+		this.setState({check_out: event.target.value});
+	}
+	setAdults = (event) => {
+		this.setState({adults: String(event.target.value)});
+	}
+	setChildren = (event) => {
+		this.setState({children: String(event.target.value)});
+	}
+
+	handleSubmit(event) {
+		event.preventDefault();
+		if(this.state.adults === "0" && this.state.children === "0") {
 			window.history.back();
 		}
 		else {
-			var booking_det = {
-				"check_in_date" : checkin,
-				"check_out_date" : checkout,
-				"no_of_adults" : ad,
-				"no_of_children" : chi
-			}
+			let nme = prompt("Enter your name: ", "");
+			var newBooking = { 
+				"name": nme,
+				"check_in": this.state.check_in, 
+				"check_out": this.state.check_out, 
+				"adults": this.state.adults, 
+				"children": this.state.children 
+			};
+			axios.post('http://localhost:5000/new_booking', newBooking);
+			
+			alert("Booking Succesfull!");
 		}
 	}
 
@@ -81,14 +107,14 @@ class Bookingform extends React.Component {
 			<form style={bookingBarStyle} onSubmit={this.handleSubmit}>
 				<div style={bookingDivStyle}>
 					<h3 id="checkinhead" style={hthreeStyle}>Check In</h3>
-					<input style={bookingInputStyle} onInput={() => this.dateSelected("in")} type="date" id="check_in" required/>
+					<input style={bookingInputStyle} onInput={this.setCheckIn} type="date" id="check_in" required/>
 				</div>
 				<div style={bookingDivStyle}>
 					<h3 id="checkouthead" style={hthreeStyle}>Check Out</h3>
-					<input style={bookingInputStyle} onInput={() => this.dateSelected("out")} type="date" id="check_out" required/>
+					<input style={bookingInputStyle} onInput={this.setCheckOut} type="date" id="check_out" required/>
 				</div>
 				<div style={bookingDivStyle}>
-					<select id="adults" style={bookingInputStyle} required>
+					<select id="adults" onInput={this.setAdults} style={bookingInputStyle} required>
 						<option selected disabled value="">Adults</option>
 						<option value="0">0</option>
 						<option value="1">1</option>
@@ -99,7 +125,7 @@ class Bookingform extends React.Component {
 					</select>
 				</div>
 				<div style={bookingDivStyle}>
-					<select id="children" style={bookingInputStyle} required>
+					<select id="children" onInput={this.setChildren} style={bookingInputStyle} required>
 						<option selected disabled value="">Children</option>
 						<option value="0">0</option>
 						<option value="1">1</option>

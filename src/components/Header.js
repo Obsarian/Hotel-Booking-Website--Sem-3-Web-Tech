@@ -3,10 +3,11 @@ import logos from './images/logo.jpg';
 import styles from './styling/header.module.css';
 import Homepage from './Homepage';
 import Aboutuspage from './Aboutuspage';
-import Contactspage from './Contactspage';
 import Rooms from './Rooms';
+import Contactspage from './Contactspage';
+import Bookings from './Bookings';
 import Footer from './Footer';
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 
 class Header extends React.Component {
     
@@ -23,6 +24,7 @@ class Header extends React.Component {
                         <a><Link to="/about-us" style={{textDecoration: "none", color: "rgb(53, 53, 53)"}}>About Us</Link></a>
                         <a><Link to="/rooms" style={{textDecoration: "none", color: "rgb(53, 53, 53)"}}>Rooms</Link></a>
                         <a><Link to="/contacts" style={{textDecoration: "none", color: "rgb(53, 53, 53)"}}>Contacts</Link></a>
+                        <a><Link to="/bookings" style={{textDecoration: "none", color: "rgb(53, 53, 53)"}}>Bookings</Link></a>
                     </div>
                     <div style={{borderTop: "3px solid sienna"}}>
                         <Routes>
@@ -30,6 +32,7 @@ class Header extends React.Component {
                             <Route path="/about-us" element={<Aboutuspage />}></Route>
                             <Route path="/rooms" element={<Rooms />}></Route>
                             <Route path="/contacts" element={<Contactspage />}></Route>
+                            <Route path="/bookings" element={<Bookings />}></Route>
                         </Routes>
                     </div>
                     {/* <div className={styles.book_button}>

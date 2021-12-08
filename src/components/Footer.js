@@ -1,6 +1,5 @@
 import React from 'react';
 import logo from './images/logo.jpg';
-import footer_background from './images/footer_background.jpg';
 
 class Footer extends React.Component {
     render() {
@@ -13,7 +12,7 @@ class Footer extends React.Component {
             textAlign: "center",
             margin: "0",
             width: "100%",
-            height: "530px",
+            height: "780px",
             borderTop: "3px solid sienna"
         };
 
@@ -44,7 +43,7 @@ class Footer extends React.Component {
                     </div>
                     <div style={contactDivStyle}>
                         <p>Address:</p>
-                        <p>Church Street</p>
+                        <p>Krambitan, Bali</p>
                     </div>
                     <div style={contactDivStyle}>
                         <p>Mail:</p>
@@ -56,6 +55,21 @@ class Footer extends React.Component {
                     <i style={socialIconStyle} class="fa fa-facebook-official" aria-hidden="true"></i>
                     <i style={socialIconStyle} class="fa fa-twitter" aria-hidden="true"></i>
                     <i style={socialIconStyle} class="fa fa-instagram" aria-hidden="true"></i>
+                </div>
+                <div>
+                    <h2 style={{color: "rgb(230, 230, 230)", margin: "60px auto 30px auto"}}>Project by:</h2>
+                    <div style={{...contactDivStyle, backgroundColor: "rgb(48, 48, 48)", borderRadius: "4px"}}>
+                        <p>Robin Roy</p>
+                        <p>PES2UG20CS279</p>
+                    </div>
+                    <div style={{...contactDivStyle, backgroundColor: "rgb(48, 48, 48)", borderRadius: "4px"}}>
+                        <p>Ronit Bhathija</p>
+                        <p>PES2UG20CS284</p>
+                    </div>
+                    <div style={{...contactDivStyle, backgroundColor: "rgb(48, 48, 48)", borderRadius: "4px"}}>
+                        <p>Sachin Vishwamitra</p>
+                        <p>PES2UG20CS291</p>
+                    </div>
                 </div>
             </div>
         );

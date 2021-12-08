@@ -9,11 +9,6 @@ import slideshow_5 from './images/slideshow_5.jpg';
 const image_links = [slideshow_1, slideshow_2,  slideshow_3,  slideshow_4, slideshow_5];
 var len = image_links.length;
 
-// https://cache.marriott.com/marriottassets/marriott/BLRFB/blrfb-pool-0021-hor-feat.jpg
-// https://cache.marriott.com/marriottassets/marriott/BLRJW/blrjw-lobby-0041-hor-feat.jpg
-// https://cache.marriott.com/marriottassets/marriott/BLRGT/blrgt-exterior-0011-hor-feat.jpg
-// https://cache.marriott.com/marriottassets/marriott/BLRJW/blrjw-room-0042-hor-feat.jpg?output-quality=70&interpolation=progressive-bilinear&downsize=1180px:*
-
 class ImageSlideShow extends React.Component {
 
     constructor(props) {
@@ -31,7 +26,7 @@ class ImageSlideShow extends React.Component {
 
     plusSlides = (dir) => {
         this.setState((prevState) => ({ 
-            slideIndex: (prevState.slideIndex + len + dir)%len
+            slideIndex: (prevState.slideIndex + dir)%len
         }));
     }
 

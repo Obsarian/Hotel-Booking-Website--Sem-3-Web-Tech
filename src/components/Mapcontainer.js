@@ -14,7 +14,11 @@ class Mapcontainer extends React.Component {
 		};
 		return (
 			<div style={mapDivStyle}>
-				<Map style={mapStyle} google={this.props.google} zoom={14}>
+				<Map style={mapStyle} google={this.props.google} 
+				initialCenter={{
+            		lat: -8.5209,
+            		lng: 115.0920
+				}} zoom={14}>
 					<Marker onClick={this.onMarkerClick} name={'Current location'} />
 					<InfoWindow onClose={this.onInfoWindowClose}></InfoWindow>
 				</Map>
